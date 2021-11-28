@@ -10,7 +10,7 @@ import android.graphics.BitmapFactory;
 public class Flight {
 
     boolean isGoingUp = false;
-    int x, y, width = 0, height = 0, wingCounter = 0;
+    int x, y, width, height, wingCounter = 0;
     Bitmap flight1, flight2;
     
     Flight (int screenY, Resources res) {
@@ -24,8 +24,8 @@ public class Flight {
         width /= 4;
         height /= 4;
 
-        width *= (int) screenRatioX;
-        height *= (int) screenRatioY;
+        width = (int) ( width * screenRatioX);
+        height = (int) ( height * screenRatioY);
 
         flight1 = Bitmap.createScaledBitmap(flight1, width, height, false);
         flight2 = Bitmap.createScaledBitmap(flight2, width, height, false);
